@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Immune Architecture — An Evolutionary Framework for Immunity</title>
-<meta name="description" content="The immune system wasn't designed. It was built in stages — over hundreds of millions of years. Understanding that history changes everything about how we think about disease.">
+<title>Immune Architecture — A Layered Framework for Immune Function</title>
+<meta name="description" content="Immune Architecture is a layered framework for understanding why immune responses succeed, fail, and become durable across cancer, autoimmunity, and chronic inflammatory disease.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
@@ -250,6 +250,61 @@ nav {
   letter-spacing: 0.02em;
 }
 
+
+.hero-thesis-points {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 460px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.7s forwards;
+}
+.hero-thesis-point {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: #b8b2a4;
+}
+.hero-thesis-point::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+.framework-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  margin-top: 2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.framework-strip div {
+  background: rgba(18,17,14,0.72);
+  padding: 1rem;
+}
+.framework-strip strong {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber-light);
+  margin-bottom: 0.45rem;
+}
+.framework-strip span {
+  display: block;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #aaa498;
+  font-weight: 300;
+}
+
 /* ── UTILITY ── */
 .container {
   max-width: 1080px;
@@ -316,6 +371,120 @@ nav {
   line-height: 1.6;
   color: var(--ink);
   margin: 0 !important;
+}
+
+.core-operational {
+  grid-column: 1 / -1;
+  margin-top: 4rem;
+  padding: 2.75rem;
+  background: var(--ink);
+  border-left: 2px solid var(--amber);
+  position: relative;
+  overflow: hidden;
+}
+
+.core-operational::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 79px,
+    rgba(200,190,160,0.8) 79px,
+    rgba(200,190,160,0.8) 80px
+  );
+  pointer-events: none;
+}
+
+.core-operational-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.core-operational-header {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+
+.core-operational-title {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #f0ece0;
+}
+
+.core-operational-title em {
+  color: var(--amber-light);
+  font-style: italic;
+}
+
+.core-operational-copy p {
+  font-size: 0.94rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #9a9488;
+  margin-bottom: 1rem;
+}
+
+.core-operational-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.rrr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.rrr-card {
+  background: rgba(255,255,255,0.035);
+  padding: 2rem;
+  min-height: 210px;
+  position: relative;
+}
+
+.rrr-card::before {
+  content: attr(data-step);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--amber-light);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.rrr-card h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #f0ece0;
+  margin-bottom: 0.75rem;
+}
+
+.rrr-card p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #9a9488;
+  margin: 0;
+}
+
+.rrr-arrow {
+  font-family: var(--mono);
+  color: var(--amber-light);
+  opacity: 0.75;
+  margin-top: 1.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
 }
 .premise-right {
   padding-top: 0.5rem;
@@ -751,7 +920,14 @@ footer {
   .axes-intro,
   .why-grid { grid-template-columns: 1fr; gap: 3rem; }
   .axes-grid { grid-template-columns: 1fr 1fr; }
+  .framework-strip { grid-template-columns: 1fr; }
   .strata-row { grid-template-columns: 60px 1fr; }
+
+  .core-operational { padding: 2rem 1.5rem; margin-top: 3rem; }
+  .core-operational-header,
+  .rrr-grid { grid-template-columns: 1fr; gap: 1px; }
+  .rrr-card { min-height: auto; }
+
   .strata-era,
   .strata-desc { display: none; }
   section { padding: 5rem 0; }
@@ -767,10 +943,10 @@ footer {
 <nav>
   <a href="#" class="nav-logo">Immune<span>Architecture</span></a>
   <ul class="nav-links">
-    <li><a href="#premise">The idea</a></li>
-    <li><a href="#layers">The layers</a></li>
+    <li><a href="#premise">Thesis</a></li>
+    <li><a href="#layers">Layers</a></li>
     <li><a href="#axes">Function</a></li>
-    <li><a href="#why">Why it matters</a></li>
+    <li><a href="#why">Therapeutic logic</a></li>
   </ul>
   <a href="#contact" class="nav-contact">Get in touch</a>
 </nav>
@@ -782,11 +958,16 @@ footer {
   <div class="hero-bg-lines" style="z-index:2;"></div>
 
   <div class="hero-left" style="position:relative;z-index:3;">
-    <p class="hero-eyebrow">A framework for understanding immunity</p>
-    <h1>Your immune system<br>wasn't built<br><em>all at once.</em></h1>
-    <p class="hero-sub">It was assembled in stages — over hundreds of millions of years — each layer added on top of the last. Evolutionary pressures continue to shape the landscape of immune function.</p>
+    <p class="hero-eyebrow">A layered framework for immune function</p>
+    <h1>Immune Function<br>Requires <em>Architecture.</em></h1>
+    <p class="hero-sub">Immune responses succeed when tissue surveillance, recruitment, and effector execution remain coordinated. Disease emerges when that architecture breaks down, and therapies often fail when they target the final effector layer without restoring the systems beneath it.</p>
+    <div class="hero-thesis-points">
+      <div class="hero-thesis-point">Layer 1 maintains tissue surveillance and immune balance.</div>
+      <div class="hero-thesis-point">Layer 2 recruits and coordinates immune response.</div>
+      <div class="hero-thesis-point">Layer 3 executes adaptive, antigen-specific immunity.</div>
+    </div>
     <a href="#premise" class="hero-cta">
-      Explore the framework
+      Explore the thesis
       <span class="hero-cta-arrow"></span>
     </a>
   </div>
@@ -831,13 +1012,13 @@ footer {
   <div class="container">
     <div class="premise-grid">
       <div class="premise-left reveal">
-        <span class="section-mono">01 — The core idea</span>
-        <h2>Evolution left its<br><em>fingerprints</em> on immunity</h2>
-        <p>Geologists read the history of the earth in rock layers. Each stratum tells a story: what pressures existed, what solutions emerged, what had to be solved before anything else could work.</p>
-        <p>The immune system follows the same logic. Ancient defenses still run at the foundation. More recent innovations sit on top — but are dependent on signals from older layers to achieve proper function.</p>
-        <p>This isn't just an analogy. The layered structure predicts how immune responses unfold, how they fail, and where intervention makes most sense.</p>
+        <span class="section-mono">01 — The thesis</span>
+        <h2>Immunity requires organization,<br><em>not just activation.</em></h2>
+        <p>Modern immunology often describes immune responses by their parts: targets, pathways, cytokines, checkpoints, and effector cells. Immune Architecture asks a different question: how are these modules organized spatiotemporally during a normal immune response?</p>
+        <p>The framework proposes that immunity operates in layers. Foundational tissue surveillance and repair systems support recruitment and coordination, which in turn support adaptive effector function and memory.</p>
+        <p>This matters because efficient immune responses require ordered propagation across layers. Many therapies address function at the effector layer without restoring the supportive signals and tissue states that underlie durable immune control.</p>
         <div class="pullquote">
-          <p>"The immune system is not a single system. It is a stack of solutions, each one built on what came before — and reliant on the integrity of its supporting layer for efficient function."</p>
+          <p>"Immune responses unfold in the same order immunity evolved."</p>
         </div>
       </div>
       <div class="premise-right reveal" style="transition-delay:0.15s;">
@@ -856,7 +1037,47 @@ footer {
           </div>
         </div>
         <div style="background:var(--ink);padding:1.5rem 2rem;margin-top:2px;">
-          <p style="font-size:0.88rem;font-weight:300;line-height:1.8;color:#7a7870;margin:0;">Unlike geology, <strong style="color:#a0a090;font-weight:400;">all immune layers remain active simultaneously.</strong> They don't replace each other. They relay — each dependent on the integrity of what lies beneath.</p>
+          <p style="font-size:0.88rem;font-weight:300;line-height:1.8;color:#7a7870;margin:0;">Unlike geology, <strong style="color:#a0a090;font-weight:400;">all immune layers remain active simultaneously.</strong> They do not replace each other. They relay — each dependent on the integrity of what lies beneath.</p>
+          <div class="framework-strip">
+            <div><strong>React</strong><span>Foundational tissue sensing</span></div>
+            <div><strong>Recruit</strong><span>Coordinated immune entry</span></div>
+            <div><strong>Remember</strong><span>Adaptive effector selection</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="core-operational reveal">
+        <div class="core-operational-inner">
+          <div class="core-operational-header">
+            <div>
+              <span class="section-mono">The operating principle</span>
+              <div class="core-operational-title">
+                Evolutionary history becomes<br><em>response order.</em>
+              </div>
+            </div>
+            <div class="core-operational-copy">
+              <p>The architecture of immunity is not only evolutionary. It is operational. During an immune response, activation proceeds through the layers in the same order they emerged evolutionarily.</p>
+              <p>Ancient tissue and cell-intrinsic defense programs react first. More recently evolved systems are recruited later, escalating the response toward adaptive specialization, effector selection, and memory.</p>
+            </div>
+          </div>
+
+          <div class="rrr-grid">
+            <div class="rrr-card" data-step="Oldest / first">
+              <h3>React</h3>
+              <p>Immediate tissue sensing and local immune response. Ancient defense systems detect disruption and initiate rapid protective programs.</p>
+              <div class="rrr-arrow">Layer 0 / Layer 1</div>
+            </div>
+            <div class="rrr-card" data-step="Escalate / coordinate">
+              <h3>Recruit</h3>
+              <p>Local alarm signals mobilize broader immune participation across tissues, turning local detection into coordinated effector immunity.</p>
+              <div class="rrr-arrow">Layer 2</div>
+            </div>
+            <div class="rrr-card" data-step="Newest / specialize">
+              <h3>Remember</h3>
+              <p>Adaptive effector selection and immunological memory refine future responses through specialization, persistence, and recall.</p>
+              <div class="rrr-arrow">Layer 3</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -870,8 +1091,8 @@ footer {
       <div class="layers-sticky-inner">
         <div class="layers-header-sticky">
           <span class="section-mono">02 — The layers</span>
-          <h2>Building from the foundation</h2>
-          <p>Scroll to deposit each layer — oldest laid down first, newest accumulating at the surface. Each depends on the integrity of what lies beneath.</p>
+          <h2>Most therapies target the top. Durable immunity depends on the stack.</h2>
+          <p>Scroll to deposit each layer — foundational tissue defense first, adaptive execution last. The model highlights why Layer 3 therapies often require intact Layer 1 and Layer 2 support.</p>
         </div>
         <div class="strata-stack-container" id="strata-stack">
           <div class="strata-row l3" data-layer="5">
@@ -947,9 +1168,9 @@ footer {
     <div class="axes-intro reveal">
       <div>
         <span class="section-mono">03 — Functional axes</span>
-        <h2>Four things immunity<br>has to <em>get right</em></h2>
+        <h2>Four functions determine whether immunity becomes<br><em>protective, chronic, or ineffective</em></h2>
       </div>
-      <p>Every layer contributes to four orthogonal functions. These run in each layer, are escalated to higher layers, and are regulated by discrete cell types in Layer 3. Understanding them reveals why immune dysfunction takes the specific shapes it does.</p>
+      <p>Each layer contributes to four core functions. Disease can arise when any one function is overactive, underactive, spatially misplaced, or poorly relayed to the next layer. This makes the framework useful not only as a map of immune evolution, but as a way to interpret pathology and therapeutic opportunity.</p>
     </div>
     <div class="reveal" style="margin: 2.5rem 0; position: relative; transition-delay: 0.1s;">
       <img
@@ -1018,10 +1239,10 @@ footer {
   <div class="container">
     <div class="why-grid">
       <div class="why-left reveal">
-        <span class="section-mono">04 — Why it matters</span>
-        <h2>Most immune disease maps to<br><em>layer dysfunction or relay failure</em></h2>
-        <p>When you map disease states onto this framework, patterns emerge that were previously obscured. Autoimmunity, immune exclusion in tumors, chronic inflammation — these aren't random failures.</p>
-        <p>They are predictable breakdowns at specific layers or layer interfaces. The framework doesn't just organize biology. It reveals where, mechanistically, things go wrong — and where intervention is most likely to work.</p>
+        <span class="section-mono">04 — Therapeutic logic</span>
+        <h2>Durable therapeutic responses require<br>the restoration of <em>immune architecture</em></h2>
+        <p>Checkpoint inhibitors, targeted therapies, ADCs, and T-cell redirectors can produce profound responses, but many depend on a permissive immune environment. When tumors are immune-excluded, myeloid-dominated, fibrotic, or spatially disorganized, Layer 3 pressure alone may be insufficient.</p>
+        <p>Immune Architecture reframes these failures as breakdowns in tissue surveillance, recruitment, coordination, or relay. The opportunity is to pair effector therapies with interventions that rebuild the conditions required for durable immunity.</p>
         <div class="disease-tags">
           <span class="disease-tag">Autoimmunity</span>
           <span class="disease-tag">Tumor immunology</span>
@@ -1034,19 +1255,19 @@ footer {
       <div class="why-right reveal" style="transition-delay:0.15s;">
         <div class="insight-row">
           <span class="insight-num">01</span>
-          <p class="insight-text"><strong>Layer failures are not random.</strong> Each disease phenotype maps to a specific interface breakdown — the layer architecture predicts where to look.</p>
+          <p class="insight-text"><strong>Failures become diagnosable.</strong> Cold tumors, chronic inflammation, fibrosis, and autoimmunity can be interpreted as breakdowns in specific layer functions or relay points.</p>
         </div>
         <div class="insight-row">
           <span class="insight-num">02</span>
-          <p class="insight-text"><strong>Therapeutic targets become legible.</strong> Interventions aimed at restoring relay — rather than simply suppressing response — open new therapeutic strategies.</p>
+          <p class="insight-text"><strong>Therapeutic strategy becomes layered.</strong> Understanding the cause of immune dysfunction in the context of the layer in which it operates assists the rational selection of disease-relevant therapeutic targets.</p>
         </div>
         <div class="insight-row">
           <span class="insight-num">03</span>
-          <p class="insight-text"><strong>Evolutionary conservation constrains options.</strong> Older layers cannot simply be overridden. Effective intervention must work with the architecture, not against it.</p>
+          <p class="insight-text"><strong>Combination logic becomes clearer.</strong> Layer 3 therapies may work best when paired with approaches that restore Layer 1 surveillance and Layer 2 recruitment.</p>
         </div>
         <div class="insight-row">
           <span class="insight-num">04</span>
-          <p class="insight-text"><strong>The framework is clinically actionable.</strong> Not merely a conceptual exercise — it generates testable predictions about immune phenotype and treatment response.</p>
+          <p class="insight-text"><strong>The model generates predictions.</strong> Spatial biology, immune phenotyping, and tissue-state biomarkers can test whether architectural restoration improves response depth and durability.</p>
         </div>
         <div style="position:relative;margin-top:1.5rem;border-radius:2px;overflow:hidden;max-width:320px;">
           <img
@@ -1068,8 +1289,8 @@ footer {
   <div class="container">
     <div class="reveal">
       <span class="section-mono" style="display:block;text-align:center;margin-bottom:1.5rem;">Get in touch</span>
-      <h2>Interested in the <em>science?</em></h2>
-      <p>This framework is in active development and available for scientific consulting and collaboration. If you're a researcher, clinician, or investor who wants to explore applications, reach out directly.</p>
+      <h2>Interested in applying the <em>framework?</em></h2>
+      <p>Immune Architecture is being developed as a scientific and translational framework for interpreting immune dysfunction, prioritizing targets, and designing more durable therapeutic strategies in oncology, autoimmunity, and chronic inflammatory disease.</p>
       <a href="mailto:BHarman@BCHSci.com" class="cta-btn">
         BHarman@BCHSci.com
       </a>
@@ -1158,6 +1379,5 @@ footer {
   window.addEventListener('scroll', updateLayers, { passive: true });
   updateLayers();
 </script>
-<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
